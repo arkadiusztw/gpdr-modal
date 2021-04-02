@@ -1,0 +1,263 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,500");
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 1rem;
+    font: inherit;
+    vertical-align: baseline;
+    font-family: 'Roboto', sans-serif;
+}
+
+html {
+    background-color: #141414;
+}
+
+body {
+    letter-spacing: -0.5px;
+    color: rgb(22, 22, 22);
+}
+
+h1 {
+    font-size: 2rem;
+    font-weight: 400;
+}
+
+.container {
+    font-size: 45px;
+    line-height: 60px;
+    letter-spacing: -0.5px;
+    color: rgb(209, 209, 209);
+    background-image: url("jason-leem-50bzI1F6urA-unsplash.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 10px;
+    font-size: 1rem;
+    background-color: rgba(0, 0, 0, 0.60);
+    line-height: 1.2rem;
+}
+
+#gpdrFrame {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    z-index: 20;
+}
+
+.gpdrConsentBox {
+    width: 50vw;
+    height: 80vh;
+    position: fixed;
+    min-width: 500px;
+    min-height: 450px;
+    background: #f1f1f1e8;
+    z-index: 21;
+}
+
+.gpdrVendorList {
+    padding: 10px;
+    overflow-y: scroll;
+    height: 68vh;
+}
+
+.gpdrHeader {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(235, 235, 235);
+    padding: 10px;
+    color: black;
+}
+
+.sentence {
+    padding: 20px;
+    opacity: 0.5;
+}
+
+ol#vendorList {
+    font-size: 1rem;
+    line-height: 2rem;
+    padding: 10px;
+    margin-left: 20px;
+    color: #545454;
+    min-width: 480px;
+    position: relative;
+    z-index: 21;
+}
+
+span.vendorOptions {
+    position: absolute;
+    right: 0;
+    display: inline-flex;
+    justify-content: flex-end;
+    align-items: center;
+    min-width: 11vw;
+    max-width: 28vw;
+}
+
+li.vendorName {
+    max-width: 60vw;
+    border-bottom: 1px solid #0000000f;
+}
+
+a#policyLink {
+    text-decoration: underline;
+    color: #8c8c8c;
+    float: right;
+    margin-right: 5px;
+}
+
+#boxLoading {
+    width: 100%;
+    height: 100%;
+    display: none;
+    color: black;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    overflow: hidden;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    transform: scale(0.5);
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked+.slider {
+    background-color: #2196F3;
+}
+
+input:focus+.slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked+.slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+.choiceButtons {
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
+    background: rgb(209, 209, 209);
+    color: rgb(17, 17, 17);
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+    font-size: 1rem;
+    margin-top: 1vh;
+    z-index: 22;
+}
+
+.choiceBtn:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.choiceBtn {
+    padding: 10px;
+}
+
+li::marker {
+    color: #a4a4a4;
+}
+
+
+@media only screen and (min-width: 320px) and (orientation: portrait) {
+    .gpdrConsentBox {
+        height: 100vh;
+        min-width: 100vw;
+        top: 0;
+    }
+
+    .gpdrVendorList {
+        height: 74vh;
+        width: 100vw;
+    }
+
+    .choiceButtons {
+        height: 20vh;
+        padding: 1vh;
+    }
+
+    ol#vendorList {
+        padding: 10px;
+        min-width: 97%;
+        max-width: 97%;
+    }
+
+    .content {
+        line-height: 2rem;
+        padding: 4vh;
+    }
+
+}
